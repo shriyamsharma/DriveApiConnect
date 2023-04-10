@@ -90,7 +90,7 @@ app.get('/', (req, res) => {
     }
 });
 
-app.get('/google/callback', (req, res) => {
+app.get('https://driveapiconnect-production.up.railway.app/google/callback', (req, res) => {
     const code = req.query.code;
 
     if(code){
