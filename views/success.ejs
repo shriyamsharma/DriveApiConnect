@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 90vh;
+            }
+
+            .button-link {
+              display: inline-block;
+              background-color: #007bff;
+              color: #fff;
+              text-decoration: none;
+              padding: 8px 16px;
+              border-radius: 4px;
+              font-size: 1rem;
+              cursor: pointer;
+            }
+
+            input[type="file"] {
+                padding: 10px;
+                background-color: #007bff;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="userinfo">
+                <h1>Welcome, <%=name%>!</h1>
+            </div>
+            <br /><br />
+            <div style="text-align: center;">
+                <h2>Upload File to Google Drive</h2>
+
+                <% if(success) { %>
+                    <strong>Success!</strong> Your File is Uploaded Successfully.
+                <% } %>
+
+                <form action="/upload" method="POST" enctype="multipart/form-data">
+                    <div class="file-input">
+                        <span>Choose File: </span>
+                        <input type="file" name="file" required id="" />
+                    </div>
+                    <br />
+                    <button class="button-link">
+                        Upload File
+                    </button>
+                </form>
+            </div>
+            <br />
+            <div style="text-align: center;">
+                <h2>Click Here to get all the files</h2>
+                <a href="/getfiles" class="button-link">Get Files</a>
+            </div>
+            <br />
+            <div style="text-align: center;">
+                <a href="/logout" class="button-link">Logout</a>
+            </div>
+        </div>
+    </body>
+</html>
